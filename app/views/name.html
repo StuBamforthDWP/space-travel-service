@@ -14,17 +14,34 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-      <form action="address" method="post" novalidate>
-        {{ govukInput({
-          label: {
+      <form action="address" method="post">
+
+        {% call govukFieldset({
+          legend: {
             text: "What is your name?",
-            isPageHeading: true,
-            classes: "govuk-label--xl"
-          },
-          id: "name",
-          name: "name"
-        }) }}
-  
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              text: 'First name'
+            },
+            id: "first-name",
+            name: "first-name"
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: 'Last name'
+            },
+            id: "last-name",
+            name: "last-name"
+          }) }}
+
+        {% endcall %}
+
         {{ govukButton({
           text: "Continue"
         }) }}

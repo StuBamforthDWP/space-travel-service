@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-      <form action="destination" method="post" novalidate>
+      <form action="destination" method="post">
         {% call govukFieldset({
           legend: {
             text: "What is your address?",
@@ -62,7 +62,7 @@
             autocomplete: "postal-code"
           }) }}
         
-          {% endcall %}
+        {% endcall %}
 
   
         {{ govukButton({
